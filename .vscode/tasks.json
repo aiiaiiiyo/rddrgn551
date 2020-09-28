@@ -1,0 +1,49 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "type": "shell",
+         "label": "C/C++: cl.exe build active file",
+         "command": ".\\.vscode\\build.bat",
+         "args": [
+            "/Zi",
+            "/EHsc",
+            "/Fe:",
+            "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "${file}",
+            "-L${fileDirname}",
+            "-libusb"
+         ],
+         "options": {
+            "cwd": "${workspaceFolder}"
+         },
+         "problemMatcher": [
+            "$msCompile"
+         ],
+         "group": "build"
+      },
+      {
+         "type": "shell",
+         "label": "C/C++: g++.exe build active file",
+         "command": "C:\\MinGW\\bin\\g++.exe",
+         "args": [
+            "-g",
+            "${file}",
+            "-o",
+            "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "-L${fileDirname}",
+            "-llibusb"
+         ],
+         "options": {
+            "cwd": "${workspaceFolder}"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+      }
+   ]
+}
